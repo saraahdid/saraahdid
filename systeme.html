@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Système solaire</title>
+
+<style>
+/* ===== GLOBAL ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #050b18;
+    color: #eaf4ff;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* ===== LIEN ACCUEIL ===== */
+.top-link {
+    padding: 15px;
+}
+
+.top-link a {
+    color: #3a86ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ===== MENUS ===== */
+.menu-container {
+    margin: 20px;
+}
+
+/* menu principal */
+.main-menu {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.main-menu span {
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.08);
+    font-weight: bold;
+}
+
+/* sous-menus */
+.sub-menu {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.sub-menu a {
+    text-decoration: none;
+    color: #eaf4ff;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(10,20,50,0.6);
+    transition: 0.3s;
+}
+
+.sub-menu a:hover {
+    background: linear-gradient(135deg, #3a86ff, #00b4d8);
+    color: #000;
+}
+
+/* ===== CONTENU ===== */
+.planet-content {
+    display: none;
+    padding: 30px;
+    margin: 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+}
+
+/* afficher uniquement la planète ciblée */
+.planet-content:target {
+    display: block;
+}
+
+
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 15px;
+    opacity: 0.7;
+}
+scene {
+  perspective: 800px;
+}
+
+/* planète */
+.planet {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+
+  transform-style: preserve-3d;
+  animation: rotate 12s linear infinite;
+
+  box-shadow:
+    inset -20px -20px 40px rgba(0,0,0,0.7),
+    inset 20px 20px 40px rgba(255,255,255,0.1),
+    0 0 40px rgba(0,150,255,0.4);
+}
+
+/* Terre */
+.earth {
+  background: url("earth.jpeg") center/cover;
+}
+.SUN {
+  background: url("SUN.jpeg") center/cover;
+}
+.Mercure{
+  background: url("Mercure.jpeg") center/cover;
+}
+.venus {
+  background: url("venus.jpeg") center/cover;
+}
+.mars {
+  background: url("mars.jpeg") center/cover;
+}
+.jupiter {
+  background: url("jupiter.jpeg") center/cover;
+}
+.saturne {
+  background: url("saturne.jpeg") center/cover;
+}
+.Uranus {
+  background: url("Uranus.jpeg") center/cover;
+}
+.Neptune {
+  background: url(" Neptune.jpeg") center/cover;
+}
+.moon {
+  background: url("moon.jpeg") center/cover;
+}
+/* animation rotation */
+@keyframes rotate {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(360deg); }
+}
+.planets {
+  width: 200px;
+  height: 100px;
+  border-radius: 50%;
+  position: relative;
+
+  transform-style: preserve-3d;
+  animation: rotate 12s linear infinite;
+
+  box-shadow:
+    inset -20px -20px 40px rgba(0,0,0,0.7),
+    inset 20px 20px 40px rgba(255,255,255,0.1),
+    0 0 40px rgba(0,150,255,0.4);
+}
+.info-block {
+    background: rgba(58, 134, 255, 0.05);
+    border-left: 5px solid #3a86ff;
+    padding: 12px 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+.faq-item h3 {
+    color: #ffb703;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+.faq-item p {
+    margin-left: 10px;
+} 
+h2 {
+    color: #ffd166;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    text-shadow: 0 0 10px #ffd166;
+}
+SS {
+    color: withe;
+    margin-bottom: 15px;
+    font-size: 3em;
+    text-shadow: 0 0 10px #ffd166;
+}
+.btn-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg,#3a86ff,#00b4d8);
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(58,134,255,0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(58,134,255,0.9);
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-link">
+    <a href="Index.html">← Page d’accueil</a>
+</div>
+
+<header>
+    <h1>☀️ Système solaire</h1>
+</header>
+
+<main>
+
+<section>
+    <p>
+        The Solar System is a group of celestial objects that orbit the Sun due to gravity.
+        It includes the Sun, planets, moons, asteroids, and comets.
+    </p>
+</section>
+
+<!-- ☀️ SOLEIL -->
+<div class="menu-container">
+    <div class="sub-menu">
+        <a href="#soleil">☀ Soleil</a>
+    </div>
+</div>
+<section id="soleil" class="planet-content">
+    <ss>☀ Soleil</ss>
+    <p>Le Soleil est <strong>l’étoile la plus étudiée de l’Univers</strong>, et pourtant, de nombreux mystères subsistent.</p>
+    <p>Il joue un rôle <strong>fondamental dans la vie sur Terre</strong>, en fournissant lumière, chaleur et énergie.</p>
+    <p>Grâce à sa proximité, il est idéal pour l’observation astronomique, à condition de le faire <strong>en toute sécurité</strong>. Les astronomes utilisent souvent des applications pour connaître les heures de lever et coucher du Soleil, ainsi que les phases du crépuscule. Les photographes s’en servent pour capturer les heures dorées et bleues, offrant des paysages spectaculaires.</p>
+    
+    <h2>Fiche rapide :</h2>
+    <ul>
+        <li><strong>Nom officiel :</strong> Soleil</li>
+        <li><strong>Autres noms :</strong> Sol, Hélios</li>
+        <li><strong>Type :</strong> G2V (naine jaune)</li>
+        <li><strong>Magnitude :</strong> -26,74</li>
+        <li><strong>Masse :</strong> 2 × 10³⁰ kg (≈333 000 masses terrestres)</li>
+        <li><strong>Luminosité :</strong> 3,828 × 10²⁶ W</li>
+        <li><strong>Rayon :</strong> 695 700 km</li>
+        <li><strong>Température :</strong> ~5 500 °C</li>
+        <li><strong>Composition :</strong> 71 % hydrogène, 27 % hélium, 2 % autres éléments</li>
+		<li><strong>Distance de la Terre :</strong> 149 millions km</li>
+        <li><strong>Période de rotation :</strong> ~25 jours à l’équateur, ~35 jours près des pôles</li>
+    </ul>
+	<div class="info-block">
+        <h2>Faits étonnants :</h2>
+        <p>Le Soleil brûle 4 millions de tonnes de sa propre masse chaque seconde.</p>
+        <p>Il produit beaucoup de vibrations, que les scientifiques détectent avec des instruments spéciaux, car le son ne peut pas se propager dans l’espace.</p>
+        <p>Sa couche extérieure, la couronne, peut atteindre jusqu’à 3 millions de °C, beaucoup plus que sa surface (~5 500°C).</p>
+        <p>Les aurores boréales et australes sont causées par le vent solaire interagissant avec le champ magnétique terrestre.</p>
+      
+    </div>
+	
+
+    <div class="faq-item">
+	     <h2>Questions courantes :</h2>
+        <h3>Quand le Soleil explosera-t-il ?</h3>
+        <p>Il n'explosera jamais. Dans ~5 milliards d'années, il deviendra une géante rouge, engloutira Mercure et Vénus, puis la Terre pourrait être affectée. Ensuite, il deviendra une naine blanche et enfin une naine noire.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Quelle est la couleur du Soleil ?</h3>
+        <p>En réalité, le Soleil est blanc, émettant toutes les couleurs du spectre visible. Sur Terre, il apparaît jaune-orange ou rouge près de l’horizon à cause de la diffusion atmosphérique.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Le Soleil tourne-t-il ?</h3>
+        <p>Oui, dans le sens antihoraire vu depuis le pôle nord écliptique. L'équateur met ~25 jours pour tourner, les pôles ~35 jours. Il orbite autour du centre de la Voie lactée en ~225-250 millions d’années.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Quel âge a le Soleil ?</h3>
+        <p>Environ 4,6 milliards d'années, actuellement au milieu de sa durée de vie.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Comment le Soleil s'est-il formé ?</h3>
+        <p>Il s’est formé à partir d’un nuage moléculaire d’hydrogène et d’hélium, il y a ~4,6 milliards d’années, possiblement déclenché par une supernova voisine.</p>
+		<a href="https://starwalk.space/en/infographics/star-life-cycle" target="_blank" class="btn-link">Life Cycle of A Star</a>
+    </div>
+
+    <div class="faq-item">
+        <h3>Qu'est-ce qui alimente le Soleil ?</h3>
+        <p>La fusion nucléaire dans le noyau : l'hydrogène se transforme en hélium, libérant d'énormes quantités d'énergie.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Qu'est-ce que le cycle solaire de 11 ans ?</h3>
+        <p>C’est un cycle magnétique d'environ 11 ans avec inversion des pôles magnétiques et variation du nombre de taches solaires visibles à la surface.</p>
+    </div>
+	<div class="scene">
+  <div class="planet SUN"></div>
+</div>
+</section>
+
+<!-- 🌍 TERRESTRIAL PLANETS -->
+<div class="menu-container">
+    <div class="main-menu">
+        <span>🌍 Terrestrial Planets</span>
+    </div>
+    <nav class="sub-menu">
+        <a href="#mercure">Mercure</a>
+        <a href="#venus">Vénus</a>
+        <a href="#terre">Terre</a>
+        <a href="#mars">Mars</a>
+    </nav>
+</div>
+<section id="mercure" class="planet-content">
+    <h2> Mercure</h2>
+    <p>Mercure est une planète rocheuse très proche du Soleil.</p>
+	 <p>Mercure est la plus petite planète du système solaire en termes de masse et de diamètre. Elle est 18 fois moins massive que la Terre, et son diamètre atteint à peine deux cinquièmes de la taille de la Terre. Pour mieux comprendre sa taille, elle n’est qu’un tiers plus grande que la Lune. Assez étonnamment, cette petite planète est devenue encore plus petite au fil du temps. Le refroidissement de son noyau a provoqué la contraction de la planète entière, réduisant le volume de Mercure d'environ 5 à 10 km de rayon.</p>
+	<div class="info-block">
+        <h2>Fiche rapide :</h2>
+        <ul>
+            <li><strong>Type de planète :</strong> Terrestre</li>
+            <li><strong>Rayon :</strong> 2440 km (1516 miles)</li>
+            <li><strong>Masse :</strong> 3,3011 × 10<sup>23</sup> kg</li>
+            <li><strong>Aphélie :</strong> 69,8 millions de km (43,4 millions de miles)</li>
+            <li><strong>Périhélie :</strong> 46,0 millions de km (28,6 millions de miles)</li>
+            <li><strong>Distance moyenne de la Terre :</strong> 77 millions de km (48 millions de miles)</li>
+            <li><strong>Température de surface :</strong> -173°C à 427°C (-280°F à 800°F)</li>
+            <li><strong>Durée du jour solaire :</strong> 176 jours terrestres</li>
+            <li><strong>Durée du jour sidéral :</strong> 59 jours terrestres</li>
+            <li><strong>Durée de l'année :</strong> 88 jours terrestres</li>
+            <li><strong>Âge :</strong> 4,503 milliards d'années</li>
+            <li><strong>Nommé d'après :</strong> le dieu romain du commerce</li>
+        </ul>
+
+         <h2>Questions courantes :</h2>
+		 <div class="faq-item">
+        <h3>Composition interne</h3>
+        <p>Mercure est principalement composée de fer, de nickel et de roches silicatées. Son noyau de fer représente environ 61 % du volume de la planète, et son enveloppe externe fait 400 km d’épaisseur. Son noyau est presque de la même taille que celui de la Lune. Sa surface rocheuse est couverte de cratères, témoins des impacts anciens.</p>
+    </div>
+         <div class="faq-item">
+        <h3>Quelle est la température de Mercure ?</h3>
+        <p>La température de surface varie énormément : de -173°C (-280°F) la nuit à 427°C (800°F) le jour. Cela s’explique par l’absence presque totale d’atmosphère pour retenir la chaleur, ce qui fait que Mercure perd rapidement l’énergie reçue du Soleil. Bien que Mercure soit la plus proche du Soleil, ce n’est pas la plus chaude (Vénus l’est).</p>
+        </div>
+		<div class="faq-item">
+        <h3>Combien de temps dure un jour sur Mercure ?</h3>
+        <p>Un jour solaire dure environ 176 jours terrestres, presque le double d’une année qui ne dure que 88 jours. La planète tourne lentement : 59 jours terrestres pour un tour complet, avec des levers et couchers de Soleil très particuliers à cause de son orbite elliptique.</p>
+</div> 
+<div class="faq-item">
+        <h3>Vitesse et rotation</h3>
+        <p>Mercure orbite autour du Soleil à 47 km/s, plus vite que toute autre planète. Vénus, deuxième plus rapide, atteint 35 km/s. La petite planète tourne lentement sur elle-même, mais son noyau et sa surface présentent une complexité fascinante.</p>
+</div>
+<div class="scene">
+  <div class="planet Mercure"></div>
+</div>
+	</div>
+</section>
+
+</section>
+
+<section id="venus" class="planet-content">
+   <h2>🪐 Vénus</h2>
+    <p>Vénus est souvent appelée la <strong>sœur jumelle de la Terre</strong> en raison de sa taille et de sa composition similaires, mais son environnement est extrêmement hostile.</p>
+
+    
+    <div class="info-block">
+        <h2>Faits sur Vénus</h2>
+        <ul>
+            <li><strong>Type de planète :</strong> Terrestre</li>
+            <li><strong>Rayon :</strong> 6 051,8 km (3 760,4 miles)</li>
+            <li><strong>Masse :</strong> 4,867 × 10<sup>24</sup> kg</li>
+            <li><strong>Aphélie :</strong> 108,939 millions de km</li>
+            <li><strong>Périhélie :</strong> 107,476 millions de km</li>
+            <li><strong>Distance moyenne de la Terre :</strong> 40 à 261 millions de km</li>
+            <li><strong>Température de surface :</strong> 438 °C à 482 °C</li>
+            <li><strong>Durée du jour solaire :</strong> 116,75 jours terrestres</li>
+            <li><strong>Durée du jour sidéral :</strong> 243,022 jours terrestres</li>
+            <li><strong>Durée de l'année :</strong> 224,701 jours terrestres</li>
+            <li><strong>Âge :</strong> 4,503 milliards d'années</li>
+            <li><strong>Nommée d'après :</strong> la déesse romaine de l’amour et de la beauté</li>
+        </ul>
+    </div>
+
+    <div class="info-block">
+        <h2>Faits amusants sur Vénus</h2>
+        <ul>
+            <li>🔥 Vénus est la planète la plus chaude du système solaire.</li>
+            <li>☁️ Elle possède des pluies d’acide sulfurique qui n’atteignent jamais le sol.</li>
+            <li>🔄 Elle tourne dans le sens inverse des autres planètes (rotation rétrograde).</li>
+            <li>🌪️ Les vents atmosphériques peuvent atteindre 300 km/h.</li>
+            <li>🌙 Elle ne possède ni lune ni anneaux, mais une quasi-lune appelée <strong>Zoozve</strong>.</li>
+            <li>⏳ Son jour est plus long que son année.</li>
+            <li>⚖️ Sa pression atmosphérique est 92 fois celle de la Terre.</li>
+        </ul>
+    </div>
+<h2>Questions courantes :</h2>
+    <div class="faq-item">
+        <h3>Qui a découvert Vénus ?</h3>
+        <p>Vénus est observée depuis l’Antiquité. Galilée fut le premier à observer ses phases en 1610, prouvant que les planètes orbitent autour du Soleil.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Peut-on voir Vénus depuis la Terre ?</h3>
+        <p>Oui, c’est le deuxième objet le plus brillant du ciel après la Lune. Elle est visible à l’aube ou au crépuscule lors de ses plus grandes élongations.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Les phases de Vénus</h3>
+        <p>Comme la Lune, Vénus présente des phases : nouvelle, croissant, quartier, gibbeuse et pleine. Elles ont été observées pour la première fois par Galilée.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Pourquoi Vénus est-elle si chaude ?</h3>
+        <p>Son atmosphère composée à 96,5 % de dioxyde de carbone crée un puissant effet de serre qui piège la chaleur.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Pourquoi Vénus tourne-t-elle à l’envers ?</h3>
+        <p>La cause exacte est inconnue. Une collision géante ou une interaction gravitationnelle avec le Soleil sont les hypothèses principales.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Vénus a-t-elle des lunes ?</h3>
+        <p>Non. Vénus et Mercure sont les seules planètes sans satellites naturels. Cependant, l’astéroïde Zoozve est une quasi-lune.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>De quoi est composée Vénus ? </h3>
+        <p>Malheureusement, peu d'informations sont disponibles sur la structure interne de Vénus. Formation de Vénus Vénus s'est formée avec les autres planètes du système solaire. Il y a environ 4,5 milliards d'années, un nuage géant de gaz et de poussière interstellaires s'est effondré sous sa propre gravité et s'est aplati en un disque protoplanétaire. Vénus et les autres planètes rocheuses se sont formées dans la partie intérieure de ce disque, tandis que les géantes gazeuses se sont installées dans les régions extérieures du jeune système solaire. Structure de Vénus En raison de la similitude de taille et de masse entre Vénus et la Terre, les scientifiques pensent que les planètes partagent un intérieur similaire. Vénus a probablement une croûte, un manteau rocheux et un noyau liquide. Cependant, il n'est pas clair si Vénus a un noyau liquide ou solide, ou si le noyau est encore géologiquement actif.<BR> <B>Atmosphère de Vénus:</B><BR>
+		L'atmosphère gazeuse vénusienne a été initialement découverte en 1761 par le polymathe russe Mikhaïl Lomonossov. En observant le transit de Vénus à travers le disque solaire, Lomonossov a repéré un anneau lumineux autour du disque de la planète. Il a correctement supposé que ce phénomène pourrait être causé par la réfraction des rayons du Soleil dans l'épaisse atmosphère vénusienne.
+		[Image en ultraviolet de l'atmosphère de Vénus capturée par Pioneer Venus Orbiter (1979)] L'atmosphère de Vénus est composée de 96,5 % de dioxyde de carbone, 3,5 % d'azote et de traces d'autres gaz. Des nuages épais composés d'acide sulfurique et de vapeur d'eau couvrent la surface de la planète et réfléchissent environ 70 % de la lumière solaire qui atteint Vénus : c'est pourquoi cette planète est si brillante.</p>
+    </div>
+	<div class="scene">
+        <div class="planet venus"></div>
+    </div>
+
+</section>
+
+<section id="terre" class="planet-content">
+   <h2>🌍 La Terre</h2>
+    <p>La Terre est notre <strong>planète natale</strong>, la seule connue à abriter la vie. C'est une oasis bleue dans l'immensité de l'espace, avec des océans, une atmosphère respirable et une biodiversité extraordinaire.</p>
+
+    
+    <div class="info-block">
+        <h2>Faits sur la Terre</h2>
+        <ul>
+            <li><strong>Type de planète :</strong> Terrestre</li>
+            <li><strong>Rayon :</strong> 6 371 km (3 959 miles)</li>
+            <li><strong>Masse :</strong> 5,972 × 10<sup>24</sup> kg</li>
+            <li><strong>Aphélie :</strong> 152,1 millions de km</li>
+            <li><strong>Périhélie :</strong> 147,1 millions de km</li>
+            <li><strong>Distance moyenne du Soleil :</strong> 149,6 millions de km (1 UA)</li>
+            <li><strong>Température de surface :</strong> -89 °C à 58 °C (moyenne : 15 °C)</li>
+            <li><strong>Durée du jour solaire :</strong> 24 heures</li>
+            <li><strong>Durée du jour sidéral :</strong> 23 heures 56 minutes 4 secondes</li>
+            <li><strong>Durée de l'année :</strong> 365,256 jours</li>
+            <li><strong>Âge :</strong> 4,543 milliards d'années</li>
+            <li><strong>Nommée d'après :</strong> Le mot germanique "Erda" signifiant "sol" ou "terre"</li>
+        </ul>
+    </div>
+
+    <div class="info-block">
+        <h2>Faits amusants sur la Terre</h2>
+        <ul>
+            <li>💧 Environ 71% de la surface terrestre est couverte d'eau.</li>
+            <li>🌊 Les océans contiennent 97% de toute l'eau sur Terre.</li>
+            <li>🌡️ La température la plus élevée jamais enregistrée est de 56,7 °C (Death Valley, 1913).</li>
+            <li>🧲 Le champ magnétique terrestre protège la vie des radiations solaires.</li>
+            <li>🌙 La Lune s'éloigne de la Terre d'environ 3,8 cm par an.</li>
+            <li>⚡ La foudre frappe la Terre environ 100 fois par seconde.</li>
+            <li>🌍 La Terre n'est pas parfaitement ronde, mais légèrement aplatie aux pôles.</li>
+        </ul>
+    </div>
+
+    <h2>Questions courantes :</h2>
+    <div class="faq-item">
+        <h3>Qui a découvert la Terre ?</h3>
+        <p>La Terre est connue depuis toujours par l'humanité. Cependant, c'est Ératosthène (276-194 av. J.-C.) qui a été le premier à calculer sa circonférence avec une précision remarquable.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Pourquoi la Terre est-elle bleue ?</h3>
+        <p>La couleur bleue provient de la diffusion de la lumière solaire par l'atmosphère (diffusion de Rayleigh) et de la présence massive d'eau liquide à sa surface.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>La Terre a-t-elle des saisons ?</h3>
+        <p>Oui, les saisons sont causées par l'inclinaison de l'axe terrestre (23,5°) par rapport au plan de son orbite autour du Soleil.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Pourquoi la Terre abrite-t-elle la vie ?</h3>
+        <p>La Terre se trouve dans la "zone habitable" du Soleil, possède de l'eau liquide, une atmosphère protectrice, un champ magnétique et une température modérée.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Comment la Terre s'est-elle formée ?</h3>
+        <p>Il y a environ 4,5 milliards d'années, la Terre s'est formée par accrétion de poussières et de roches dans le disque protoplanétaire entourant le jeune Soleil.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>La Terre a-t-elle des lunes ?</h3>
+        <p>Oui, la Terre possède un satellite naturel : <strong>la Lune</strong>
+
+La Lune est en rotation synchrone avec la Terre et présente toujours la même face du côté proche, caractérisée par des mers volcaniques sombres qui remplissent les espaces entre d’anciennes hautes terres crustales claires et des cratères d’impact bien marqués. C’est l’objet le plus lumineux du ciel après le Soleil. Bien qu’elle paraisse d’un blanc très éclatant, sa surface est en réalité sombre, avec une réflectivité seulement légèrement supérieure à celle de l’asphalte usé.
+
+L’influence gravitationnelle de la Lune provoque les marées océaniques ainsi qu’un léger allongement de la durée du jour. La distance orbitale actuelle de la Lune est d’environ trente fois le diamètre de la Terre, ce qui lui donne dans le ciel une taille apparente presque identique à celle du Soleil. Cela permet à la Lune de recouvrir presque parfaitement le Soleil lors d’une éclipse solaire totale. Cette coïncidence de taille apparente est fortuite.
+
+On pense que la Lune s’est formée il y a environ 4,5 milliards d’années, peu de temps après la Terre. Bien que plusieurs hypothèses aient été proposées par le passé concernant son origine, l’explication aujourd’hui la plus largement acceptée est que la Lune s’est formée à partir des débris restants après une collision géante entre la Terre et un corps de la taille de Mars.
+
+La Lune est le seul corps céleste, en dehors de la Terre, sur lequel des êtres humains ont posé le pied jusqu’à présent.
+</p>
+ <div class="scene">
+        <div class="planet moon"></div>
+    </div>
+
+    </div>
+
+    <div class="faq-item">
+        <h3>De quoi est composée la Terre ?</h3>
+        <p><B>Formation de la Terre</B><BR>
+        La Terre s'est formée avec les autres planètes du système solaire il y a environ 4,54 milliards d'années. Un nuage géant de gaz et de poussière interstellaires s'est effondré sous sa propre gravité et s'est aplati en un disque protoplanétaire. La Terre et les autres planètes rocheuses se sont formées dans la partie intérieure de ce disque par accrétion de matériaux.<BR><BR>
+        
+        <B>Structure de la Terre</B><BR>
+        La Terre possède une structure en couches distinctes :
+        <ul>
+            <li><strong>La croûte :</strong> couche externe solide (5-70 km d'épaisseur)</li>
+            <li><strong>Le manteau :</strong> couche de roches silicatées semi-solides (2 900 km d'épaisseur)</li>
+            <li><strong>Le noyau externe :</strong> fer et nickel liquides (2 300 km d'épaisseur)</li>
+            <li><strong>Le noyau interne :</strong> fer et nickel solides (1 220 km de rayon)</li>
+        </ul>
+        Le mouvement du noyau externe liquide génère le champ magnétique terrestre qui protège la planète des particules solaires dangereuses.<BR><BR>
+        
+        <B>Atmosphère de la Terre</B><BR>
+        L'atmosphère terrestre est composée de 78% d'azote, 21% d'oxygène et 1% d'autres gaz (argon, dioxyde de carbone, vapeur d'eau). Cette composition unique permet la respiration de la majorité des organismes vivants. L'atmosphère se divise en plusieurs couches : la troposphère (où se produisent les phénomènes météorologiques), la stratosphère (contenant la couche d'ozone protectrice), la mésosphère, la thermosphère et l'exosphère. L'effet de serre naturel maintient la température moyenne à environ 15°C, rendant la Terre habitable.</p>
+    </div>
+
+    <div class="scene">
+        <div class="planet earth"></div>
+    </div>
+
+</section>
+
+<section id="mars" class="planet-content">
+    <h2>🔴 Mars</h2>
+
+    <p>
+        Mars est la <strong>planète rouge</strong>, le quatrième monde à partir du Soleil.
+        Désertique et glaciale, elle fascine les scientifiques car elle est la destination
+        la plus probable pour les futures explorations humaines et la recherche de traces
+        de vie passée.
+    </p>
+
+    <div class="info-block">
+        <h2>Faits sur Mars</h2>
+        <ul>
+            <li><strong>Type de planète :</strong> Terrestre (tellurique)</li>
+            <li><strong>Rayon :</strong> 3 390 km (environ la moitié de la Terre)</li>
+            <li><strong>Masse :</strong> 6,39 × 10<sup>23</sup> kg</li>
+            <li><strong>Aphélie :</strong> 249,2 millions de km</li>
+            <li><strong>Périhélie :</strong> 206,6 millions de km</li>
+            <li><strong>Distance moyenne du Soleil :</strong> 227,9 millions de km (1,52 UA)</li>
+            <li><strong>Température de surface :</strong> −153 °C à 20 °C (moyenne : −63 °C)</li>
+            <li><strong>Durée du jour (Sol) :</strong> 24 h 39 min 35 s</li>
+            <li><strong>Durée de l’année :</strong> 687 jours terrestres</li>
+            <li><strong>Âge :</strong> ~4,5 milliards d’années</li>
+            <li><strong>Nommée d’après :</strong> Mars, dieu romain de la guerre</li>
+        </ul>
+    </div>
+
+    <div class="info-block">
+        <h2>Faits amusants sur Mars</h2>
+        <ul>
+            <li>🔴 Sa couleur provient de l’oxyde de fer (rouille).</li>
+            <li>🏔️ Olympus Mons est le plus grand volcan du système solaire (≈ 22 km).</li>
+            <li>🌄 Valles Marineris est un canyon géant long de plus de 4 000 km.</li>
+            <li>🏃 La gravité est 62 % plus faible que sur Terre.</li>
+            <li>❄️ Présence de glace d’eau et de glace carbonique aux pôles.</li>
+            <li>💨 Des tempêtes de poussière peuvent couvrir toute la planète.</li>
+            <li>🌅 Les couchers de soleil apparaissent bleus sur Mars.</li>
+        </ul>
+    </div>
+
+    <h2>Questions courantes</h2>
+
+    <div class="faq-item">
+        <h3>Qui a découvert Mars ?</h3>
+        <p>
+            Mars est visible à l’œil nu et est connue depuis l’Antiquité.
+            Galilée fut l’un des premiers à l’observer au télescope en 1610.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Pourquoi Mars est-elle rouge ?</h3>
+        <p>
+            La poussière martienne est riche en fer oxydé,
+            ce qui donne à la planète sa couleur rouge caractéristique.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Y a-t-il des saisons sur Mars ?</h3>
+        <p>
+            Oui. Mars a une inclinaison axiale de 25°, ce qui provoque
+            des saisons similaires à celles de la Terre, mais plus longues.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Peut-on respirer sur Mars ?</h3>
+        <p>
+            Non. Son atmosphère est très fine et composée à 95 % de dioxyde de carbone.
+            Des combinaisons pressurisées sont indispensables.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Mars a-t-elle des lunes ?</h3>
+        <p>
+            Oui, Mars possède deux lunes : <strong>Phobos</strong> et <strong>Deimos</strong>.
+            Elles sont petites, irrégulières et ressemblent à des astéroïdes capturés.
+            Phobos orbite très rapidement et pourrait un jour se désintégrer.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3>De quoi est composée Mars ?</h3>
+
+        <p><strong>Structure interne :</strong></p>
+        <ul>
+            <li><strong>Croûte :</strong> 10 à 50 km, riche en fer</li>
+            <li><strong>Manteau :</strong> silicaté, anciennement volcanique</li>
+            <li><strong>Noyau :</strong> fer, nickel et soufre (inactif magnétiquement)</li>
+        </ul>
+
+        <p><strong>Atmosphère :</strong> 95,3 % CO₂, 2,7 % azote, 1,6 % argon.
+           Pression ≈ 0,6 % de celle de la Terre.
+        </p>
+    </div>
+	<div class="scene">
+  <div class="planet mars"></div>
+</div>
+</section>
+
+<!-- 🪐 GIANT PLANETS -->
+<div class="menu-container">
+    <div class="main-menu">
+        <span>🪐 Giant Planets</span>
+    </div>
+    <nav class="sub-menu">
+        <a href="#jupiter">Jupiter</a>
+        <a href="#saturne">Saturne</a>
+        <a href="#uranus">Uranus</a>
+        <a href="#neptune">Neptune</a>
+    </nav>
+</div>
+
+
+
+
+
+<section id="jupiter" class="planet-content">
+    <<h2>🌀 Jupiter</h2>
+    <p>Jupiter est la <strong>plus grande planète</strong> de notre système solaire. C'est une géante gazeuse si massive qu'elle pourrait contenir toutes les autres planètes réunies deux fois. Elle règne en véritable "petit système solaire" avec son cortège de lunes.</p>
+
+    
+
+    <div class="info-block">
+        <h2>Faits sur Jupiter</h2>
+        <ul>
+            <li><strong>Type de planète :</strong> Géante gazeuse</li>
+            <li><strong>Rayon :</strong> 69 911 km (11 fois celui de la Terre)</li>
+            <li><strong>Masse :</strong> 1,898 × 10<sup>27</sup> kg</li>
+            <li><strong>Aphélie :</strong> 816,6 millions de km</li>
+            <li><strong>Périhélie :</strong> 740,5 millions de km</li>
+            <li><strong>Distance moyenne du Soleil :</strong> 778,5 millions de km (5,2 UA)</li>
+            <li><strong>Température (à 1 bar) :</strong> Environ -110 °C</li>
+            <li><strong>Durée du jour :</strong> 9 heures 56 minutes (la plus courte du système solaire)</li>
+            <li><strong>Durée de l'année :</strong> 11,86 années terrestres</li>
+            <li><strong>Âge :</strong> 4,603 milliards d'années</li>
+            <li><strong>Nommée d'après :</strong> Le roi des dieux romains</li>
+        </ul>
+    </div>
+
+    <div class="info-block">
+        <h2>Faits amusants sur Jupiter</h2>
+        <ul>
+            <li>👁️ La Grande Tache Rouge est une tempête géante qui dure depuis plus de 300 ans.</li>
+            <li>🛡️ Sa gravité immense protège souvent la Terre en déviant les comètes dangereuses.</li>
+            <li>💎 À l'intérieur, la pression est si forte qu'il pourrait y pleuvoir des diamants.</li>
+            <li>⚡ Elle possède le champ magnétique le plus puissant de toutes les planètes.</li>
+            <li>🛰️ Elle a plus de 90 lunes connues, dont Ganymède, plus grosse que Mercure.</li>
+            <li>📻 Jupiter émet des ondes radio si puissantes qu'on peut les capter depuis la Terre.</li>
+        </ul>
+    </div>
+
+    <h2>Questions courantes :</h2>
+    <div class="faq-item">
+        <h3>Peut-on marcher sur Jupiter ?</h3>
+        <p>Non. Jupiter n'a pas de surface solide. Si vous y descendiez, vous vous enfonceriez dans des couches de gaz de plus en plus denses et chaudes jusqu'à être écrasé par la pression atmosphérique.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Jupiter a-t-elle des anneaux ?</h3>
+        <p>Oui, mais ils sont très sombres et composés de poussière, contrairement à ceux de Saturne qui sont de glace. Ils ont été découverts par la sonde Voyager 1 en 1979.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>De quoi est composée Jupiter ?</h3>
+        <p><b>Composition et Atmosphère</b><br>
+        Jupiter est composée à 90% d'hydrogène et 10% d'hélium, une composition proche de celle d'une étoile. Ses bandes colorées sont des nuages d'ammoniac et d'eau circulant à des vitesses extrêmes dans une atmosphère de 5 000 km d'épaisseur.<br><br>
+        
+        <b>Structure interne</b><br>
+        Sous l'atmosphère se trouve une couche d'hydrogène liquide, puis une couche d'hydrogène métallique liquide (qui conduit l'électricité et crée le champ magnétique), entourant probablement un noyau central rocheux et dense.</p>
+    </div>
+	<div class="scene">
+  <div class="planet jupiter"></div>
+</div>
+</section>
+
+<section id="saturne" class="planet-content">
+   <h2>🪐 Saturne</h2>
+    <p>Saturne est le <strong>joyau du système solaire</strong>. Célèbre pour son système d'anneaux spectaculaire, cette géante gazeuse est la deuxième plus grande planète, mais aussi la moins dense.</p>
+
+    <div class="info-block">
+        <h2>Faits sur Saturne</h2>
+        <ul>
+            <li><strong>Type de planète :</strong> Géante gazeuse</li>
+            <li><strong>Rayon :</strong> 58 232 km</li>
+            <li><strong>Masse :</strong> 5,683 × 10<sup>26</sup> kg</li>
+            <li><strong>Distance moyenne du Soleil :</strong> 1,4 milliard de km (9,5 UA)</li>
+            <li><strong>Température (à 1 bar) :</strong> -140 °C</li>
+            <li><strong>Durée du jour :</strong> 10 heures 33 minutes</li>
+            <li><strong>Durée de l'année :</strong> 29,4 années terrestres</li>
+            <li><strong>Nommée d'après :</strong> Le dieu romain du temps et de l'agriculture</li>
+        </ul>
+    </div>
+
+    <div class="info-block">
+        <h2>Faits amusants sur Saturne</h2>
+        <ul>
+            <li>🛁 Saturne est moins dense que l'eau : si vous trouviez une baignoire assez grande, elle flotterait !</li>
+            <li>💍 Ses anneaux sont faits de milliards de morceaux de glace, de la taille d'un grain de sable à celle d'une montagne.</li>
+            <li>⬡ Il y a une tempête permanente en forme d'hexagone parfait à son pôle Nord.</li>
+            <li>🌬️ Les vents y soufflent à plus de 1 800 km/h.</li>
+            <li>🌙 Sa lune Titan possède sa propre atmosphère et des lacs de méthane liquide.</li>
+        </ul>
+    </div>
+
+    <div class="faq-item">
+        <h3>D'où viennent les anneaux ?</h3>
+        <p>On pense qu'ils sont les restes de comètes, d'astéroïdes ou de lunes brisées par la gravité de Saturne avant d'avoir pu l'atteindre.</p>
+    </div>
+	<div class="scene">
+  <div class="planets saturne"></div>
+</div>
+</section>
+
+<section id="uranus" class="planet-content">
+   <h2>🧊 Uranus</h2>
+    <p>Uranus est une <strong>géante de glace</strong> mystérieuse. Elle se distingue par sa couleur bleu-vert pâle et sa rotation totalement atypique par rapport aux autres planètes.</p>
+
+    
+
+    <div class="info-block">
+        <h2>Faits sur Uranus</h2>
+        <ul>
+            <li><strong>Type de planète :</strong> Géante de glace</li>
+            <li><strong>Rayon :</strong> 25 362 km</li>
+            <li><strong>Distance moyenne du Soleil :</strong> 2,9 milliards de km (19,2 UA)</li>
+            <li><strong>Température minimale :</strong> -224 °C (la plus froide du système solaire)</li>
+            <li><strong>Durée de l'année :</strong> 84 années terrestres</li>
+            <li><strong>Nommée d'après :</strong> Le dieu grec du ciel</li>
+        </ul>
+    </div>
+
+    <div class="info-block">
+        <h2>Faits amusants sur Uranus</h2>
+        <ul>
+            <li>🤸 Elle "roule" sur son orbite : son axe de rotation est incliné à 98°, ce qui signifie qu'elle est couchée sur le côté.</li>
+            <li>💎 Les scientifiques pensent qu'il existe des océans de diamants liquides sous sa surface.</li>
+            <li>🌬️ Son atmosphère est composée de méthane, ce qui lui donne sa couleur bleue et une odeur d'œuf pourri (sulfure d'hydrogène).</li>
+        </ul>
+    </div>
+
+    <div class="faq-item">
+        <h3>Pourquoi est-elle si penchée ?</h3>
+        <p>La théorie principale est qu'Uranus a été frappée par un objet de la taille de la Terre il y a des milliards d'années, ce qui l'a littéralement basculée sur le côté.</p>
+    </div>
+	<div class="scene">
+  <div class="planets Uranus"></div>
+</div>
+</section>
+
+<section id="neptune" class="planet-content">
+    <h2>🌊 Neptune</h2>
+    <p>Neptune est la <strong>planète la plus lointaine</strong> de notre système solaire. Sombre, froide et fouettée par des vents supersoniques, c'est une géante de glace aux confins du vide intersidéral.</p>
+
+    <div class="info-block">
+        <h2>Faits sur Neptune</h2>
+        <ul>
+            <li><strong>Type de planète :</strong> Géante de glace</li>
+            <li><strong>Rayon :</strong> 24 622 km</li>
+            <li><strong>Distance moyenne du Soleil :</strong> 4,5 milliards de km (30,1 UA)</li>
+            <li><strong>Vents :</strong> Jusqu'à 2 100 km/h</li>
+            <li><strong>Durée de l'année :</strong> 165 années terrestres</li>
+            <li><strong>Nommée d'après :</strong> Le dieu romain de la mer</li>
+        </ul>
+    </div>
+
+    <div class="info-block">
+        <h2>Faits amusants sur Neptune</h2>
+        <ul>
+            <li>🛰️ C'est la seule planète découverte par les mathématiques avant d'être vue au télescope.</li>
+            <li>🔵 Son bleu est beaucoup plus intense que celui d'Uranus, bien que leur composition soit similaire.</li>
+            <li>🌪️ Elle possède de grandes taches sombres qui sont des tempêtes de la taille de la Terre.</li>
+            <li>🌙 Sa plus grande lune, Triton, orbite en sens inverse de la rotation de la planète.</li>
+        </ul>
+    </div>
+	<div class="scene">
+  <div class="planet  Neptune"></div>
+</div>
+</section>
+<!-- 🌠 METEOR SHOWERS -->
+<div class="menu-container">
+    <div class="main-menu">
+        <span>🌠 Meteor Showers</span>
+    </div>
+    <nav class="sub-menu">
+        <a href="#perseides">Perséides</a>
+        <a href="#geminides">Géminides</a>
+        <a href="#quadrantides">Quadrantides</a>
+    </nav>
+</div>
+
+<section id="perseides" class="planet-content">
+    <h2>🌠 Les Perséides</h2>
+    <ul>
+        <li><strong>Période d’activité :</strong> 17 juillet – 24 août</li>
+        <li><strong>Maximum :</strong> 12-13 août</li>
+        <li><strong>Taux horaire :</strong> jusqu’à 100 météores/heure dans de bonnes conditions</li>
+        <li><strong>Constellation d’origine :</strong> Persée</li>
+        <li><strong>Cause :</strong> Débris de la comète Swift-Tuttle</li>
+        <li><strong>Faits intéressants :</strong> Cette pluie est active depuis l’Antiquité et est connue pour produire de très nombreux météores lumineux et rapides.</li>
+    </ul>
+</section>
+
+<section id="geminides" class="planet-content">
+    <h2>🌠 Les Géminides</h2>
+    <ul>
+        <li><strong>Période d’activité :</strong> 4 – 17 décembre</li>
+        <li><strong>Maximum :</strong> 13-14 décembre</li>
+        <li><strong>Taux horaire :</strong> jusqu’à 120 météores/heure</li>
+        <li><strong>Constellation d’origine :</strong> Gémeaux</li>
+        <li><strong>Cause :</strong> Débris de l’astéroïde 3200 Phaéthon</li>
+        <li><strong>Faits intéressants :</strong> C’est l’une des pluies les plus fiables et intenses de l’année, souvent visible même en zone urbaine.</li>
+    </ul>
+</section>
+
+<section id="quadrantides" class="planet-content">
+    <h2>🌠 Les Quadrantides</h2>
+    <ul>
+        <li><strong>Période d’activité :</strong> 28 décembre – 12 janvier</li>
+        <li><strong>Maximum :</strong> 3-4 janvier</li>
+        <li><strong>Taux horaire :</strong> jusqu’à 120 météores/heure</li>
+        <li><strong>Constellation d’origine :</strong> Bouvier (anciennement Quadrans Muralis)</li>
+        <li><strong>Cause :</strong> Débris de la comète 2003 EH1</li>
+        <li><strong>Faits intéressants :</strong> Leur maximum est très court, souvent seulement quelques heures, ce qui en fait une pluie à observer avec précision.</li>
+    </ul>
+</section>
+<!-- 🌑 Dwarf Planets -->
+<div class="menu-container">
+    <div class="main-menu">
+        <span>🌑 Dwarf Planets</span>
+    </div>
+    <nav class="sub-menu">
+        <a href="#ceres">Cérès</a>
+        <a href="#pluton">Pluton</a>
+        <a href="#eris">Éris</a>
+        <a href="#haumea">Hauméa</a>
+        <a href="#makemake">Makémaké</a>
+    </nav>
+</div>
+
+<section id="ceres" class="planet-content">
+    <h2>🌑 Cérès</h2>
+    <ul>
+        <li><strong>Type :</strong> Planète naine</li>
+        <li><strong>Diamètre :</strong> 940 km</li>
+        <li><strong>Distance au Soleil :</strong> 2,77 UA (414 millions km)</li>
+        <li><strong>Période orbitale :</strong> 4,6 ans terrestres</li>
+        <li><strong>Composition :</strong> roches et glace</li>
+        <li><strong>Faits intéressants :</strong> Cérès est le plus grand objet de la ceinture d’astéroïdes et pourrait abriter de l’eau sous forme de glace.</li>
+    </ul>
+</section>
+
+<section id="pluton" class="planet-content">
+    <h2>🌑 Pluton</h2>
+    <ul>
+        <li><strong>Type :</strong> Planète naine</li>
+        <li><strong>Diamètre :</strong> 2 377 km</li>
+        <li><strong>Distance au Soleil :</strong> 39,5 UA (5,9 milliards km)</li>
+        <li><strong>Période orbitale :</strong> 248 ans terrestres</li>
+        <li><strong>Composition :</strong> roches et glace</li>
+        <li><strong>Faits intéressants :</strong> Pluton possède 5 lunes connues, la plus grande étant Charon. Sa surface est couverte de glace de méthane.</li>
+    </ul>
+</section>
+<section id="eris" class="planet-content">
+    <h2>🌑 Éris</h2>
+    <ul>
+        <li><strong>Type :</strong> Planète naine</li>
+        <li><strong>Diamètre :</strong> ~2 326 km</li>
+        <li><strong>Distance au Soleil :</strong> 67,7 UA (10,1 milliards km)</li>
+        <li><strong>Période orbitale :</strong> ~557 ans terrestres</li>
+        <li><strong>Composition :</strong> glace et roche</li>
+        <li><strong>Faits intéressants :</strong> Éris est légèrement plus petite que Pluton mais plus massive. Elle possède une lune nommée Dysnomie.</li>
+    </ul>
+</section>
+
+<section id="haumea" class="planet-content">
+    <h2>🌑 Hauméa</h2>
+    <ul>
+        <li><strong>Type :</strong> Planète naine</li>
+        <li><strong>Diamètre :</strong> ~2 322 km (axe le plus long ~2 000 km, axe le plus court ~1 600 km)</li>
+        <li><strong>Distance au Soleil :</strong> ~43,1 UA (6,45 milliards km)</li>
+        <li><strong>Période orbitale :</strong> ~285 ans terrestres</li>
+        <li><strong>Composition :</strong> glace et roche</li>
+        <li><strong>Faits intéressants :</strong> Hauméa a une forme allongée due à sa rotation rapide (~3,9 heures). Elle possède deux lunes : Hiʻiaka et Namaka.</li>
+    </ul>
+</section>
+
+<section id="makemake" class="planet-content">
+    <h2>🌑 Makémaké</h2>
+    <ul>
+        <li><strong>Type :</strong> Planète naine</li>
+        <li><strong>Diamètre :</strong> ~1 434 km</li>
+        <li><strong>Distance au Soleil :</strong> ~45,8 UA (6,85 milliards km)</li>
+        <li><strong>Période orbitale :</strong> ~305 ans terrestres</li>
+        <li><strong>Composition :</strong> glace et roche</li>
+        <li><strong>Faits intéressants :</strong> Makémaké possède au moins une lune connue (MK2). Elle est l’une des planètes naines les plus lumineuses de la ceinture de Kuiper.</li>
+    </ul>
+</section>
+<!-- ☄️ Comets -->
+<div class="menu-container">
+    <div class="main-menu">
+        <span>☄️ Comets</span>
+    </div>
+    <nav class="sub-menu">
+        <a href="#halley">Halley</a>
+        <a href="#hale-bopp">Hale-Bopp</a>
+        <a href="#swift-tuttle">Swift-Tuttle</a>
+    </nav>
+</div>
+
+<section id="halley" class="planet-content">
+    <h2>☄️ Comète de Halley</h2>
+    <ul>
+        <li><strong>Type :</strong> Comète périodique</li>
+        <li><strong>Période orbitale :</strong> 76 ans</li>
+        <li><strong>Origine :</strong> Nuage de Oort</li>
+        <li><strong>Faits intéressants :</strong> La comète de Halley a été observée depuis l’Antiquité et reviendra en 2061.</li>
+    </ul>
+</section>
+
+<section id="hale-bopp" class="planet-content">
+    <h2>☄️ Comète Hale-Bopp</h2>
+    <ul>
+        <li><strong>Période orbitale :</strong> ~2 533 ans</li>
+        <li><strong>Origine :</strong> Nuage de Oort</li>
+        <li><strong>Découverte :</strong> 1995</li>
+        <li><strong>Faits intéressants :</strong> Hale-Bopp a été extrêmement brillante et visible à l’œil nu pendant des mois en 1997.</li>
+    </ul>
+</section>
+<!-- 🚀 Missions spatiales -->
+<div class="menu-container">
+    <div class="main-menu">
+        <span>🚀 Missions spatiales</span>
+    </div>
+    <nav class="sub-menu">
+	<a href="#apollo">Apollo Program</a>
+        <a href="#voyager">Voyager 1 & 2</a>
+        <a href="#curiosity">Curiosity</a>
+        <a href="#new-horizons">New Horizons</a>
+        <a href="#juno">Juno</a>
+        <a href="#hubble">Hubble</a>
+        <a href="#cassini">Cassini</a>
+        <a href="#rosetta">Rosetta</a>
+        <a href="#kepler">Kepler</a>
+        <a href="#perseverance">Perseverance</a>
+    </nav>
+</div>
+
+<section id="voyager" class="planet-content">
+    <h2>🚀 Voyager 1 & 2</h2>
+    <ul>
+        <li><strong>Lancement :</strong> 1977</li>
+        <li><strong>Objectif :</strong> Exploration des planètes géantes et de l’espace interstellaire</li>
+        <li><strong>Faits intéressants :</strong> Voyager 1 est devenu le premier objet fabriqué par l’homme à quitter l’héliosphère.</li>
+    </ul>
+</section>
+
+<section id="curiosity" class="planet-content">
+    <h2>🚀 Curiosity</h2>
+    <ul>
+        <li><strong>Lancement :</strong> 2011</li>
+        <li><strong>Objectif :</strong> Étude de la surface et de l’atmosphère de Mars</li>
+        <li><strong>Faits intéressants :</strong> Curiosity a découvert des preuves de l’ancienne présence d’eau sur Mars.</li>
+    </ul>
+</section>
+
+<section id="new-horizons" class="planet-content">
+    <h2>🚀 New Horizons</h2>
+    <ul>
+        <li><strong>Lancement :</strong> 2006</li>
+        <li><strong>Objectif :</strong> Survol de Pluton et de la ceinture de Kuiper</li>
+        <li><strong>Faits intéressants :</strong> New Horizons a fourni les premières images détaillées de Pluton et de Charon en 2015.</li>
+    </ul>
+</section>
+
+<section id="juno" class="planet-content">
+    <h2>🚀 Juno</h2>
+    <ul>
+        <li><strong>Lancement :</strong> 2011</li>
+        <li><strong>Objectif :</strong> Étude de l’atmosphère et du champ magnétique de Jupiter</li>
+        <li><strong>Faits intéressants :</strong> Juno orbite autour de Jupiter et fournit des images incroyables des pôles et des tempêtes de la planète.</li>
+    </ul>
+</section>
+
+<section id="hubble" class="planet-content">
+    <h2>🚀 Hubble</h2>
+    <ul>
+        <li><strong>Lancement :</strong> 1990</li>
+        <li><strong>Objectif :</strong> Observation de l’Univers lointain et étude des galaxies, étoiles et planètes</li>
+        <li><strong>Faits intéressants :</strong> Hubble a fourni certaines des images les plus emblématiques de l’espace et a aidé à mesurer l’expansion de l’Univers.</li>
+    </ul>
+</section>
+
+<section id="cassini" class="planet-content">
+    <h2>🚀 Cassini</h2>
+    <ul>
+        <li><strong>Lancement :</strong> 1997</li>
+        <li><strong>Objectif :</strong> Étude de Saturne, de ses anneaux et de ses lunes</li>
+        <li><strong>Faits intéressants :</strong> Cassini a découvert des geysers sur Encelade et a étudié Titan, la lune avec une atmosphère dense.</li>
+    </ul>
+</section>
+
+<section id="rosetta" class="planet-content">
+    <h2>🚀 Rosetta</h2>
+    <ul>
+        <li><strong>Lancement :</strong> 2004</li>
+        <li><strong>Objectif :</strong> Étudier la comète 67P/Churyumov-Gerasimenko</li>
+        <li><strong>Faits intéressants :</strong> Rosetta a largué le module Philae sur la comète, réalisant le premier atterrissage sur une comète.</li>
+    </ul>
+</section>
+
+<section id="kepler" class="planet-content">
+    <h2>🚀 Kepler</h2>
+    <ul>
+        <li><strong>Lancement :</strong> 2009</li>
+        <li><strong>Objectif :</strong> Recherche d’exoplanètes dans la Voie lactée</li>
+        <li><strong>Faits intéressants :</strong> Kepler a découvert des milliers de planètes en dehors du système solaire, dont certaines situées dans la zone habitable de leur étoile.</li>
+    </ul>
+</section>
+
+<section id="perseverance" class="planet-content">
+    <h2>🚀 Perseverance</h2>
+    <ul>
+        <li><strong>Lancement :</strong> 2020</li>
+        <li><strong>Objectif :</strong> Explorer Mars, rechercher des signes de vie ancienne et collecter des échantillons</li>
+        <li><strong>Faits intéressants :</strong> Perseverance a déployé le petit hélicoptère Ingenuity et continue d’explorer le cratère Jezero.</li>
+    </ul>
+</section>
+<section id="apollo" class="planet-content">
+    <h2>🚀 Apollo Program</h2>
+    <ul>
+        <li><strong>Période :</strong> 1961 – 1972</li>
+        <li><strong>Objectif :</strong> Atterrir des humains sur la Lune et les ramener en toute sécurité</li>
+        <li><strong>Faits intéressants :</strong>
+            <ul>
+                <li>Apollo 11 (1969) : Neil Armstrong et Buzz Aldrin ont été les premiers humains à marcher sur la Lune.</li>
+                <li>Apollo 12 à 17 : ont exploré différentes régions lunaires, collecté des échantillons et mené des expériences scientifiques.</li>
+                <li>Les missions Apollo ont fourni des données cruciales sur la géologie lunaire et démontré la faisabilité des voyages habités au-delà de la Terre.</li>
+            </ul>
+        </li>
+    </ul>
+</section>
+
+</main>
+
+<footer>© Sara Ahdid</footer>
+
+</body>
+</html>
