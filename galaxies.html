@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Galaxies</title>
+
+<style>
+/* ===== GLOBAL ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9)),
+                      url("stars.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #eaf4ff;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* ===== LIEN ACCUEIL ===== */
+.top-link {
+    padding: 15px;
+}
+
+.top-link a {
+    color: #3a86ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ===== MENUS ===== */
+.menu-container {
+    margin: 20px;
+}
+
+.main-menu {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.main-menu span {
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.08);
+    font-weight: bold;
+}
+
+.sub-menu {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.sub-menu a {
+    text-decoration: none;
+    color: #eaf4ff;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(10,20,50,0.6);
+    transition: 0.3s;
+}
+
+.sub-menu a:hover {
+    background: linear-gradient(135deg, #3a86ff, #00b4d8);
+    color: #000;
+}
+
+/* ===== CONTENU ===== */
+.galaxy-content {
+    display: none;
+    padding: 30px;
+    margin: 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+}
+
+.galaxy-content:target {
+    display: block;
+}
+
+h2 {
+    color: #ffd166;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    text-shadow: 0 0 10px #ffd166;
+}
+
+.info-block {
+    background: rgba(58, 134, 255, 0.05);
+    border-left: 5px solid #3a86ff;
+    padding: 12px 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.btn-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg,#3a86ff,#00b4d8);
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(58,134,255,0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(58,134,255,0.9);
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-link">
+    <a href="Index.html">← Page d’accueil</a>
+</div>
+
+<header>
+    <h1>🌌 Galaxies</h1>
+</header>
+
+<main>
+
+<!-- 🌌 TYPES DE GALAXIES -->
+<div class="menu-container">
+    <div class="main-menu">
+        <span>🌌 Types de Galaxies</span>
+    </div>
+    <nav class="sub-menu">
+        <a href="#spirale">Galaxies Spirales</a>
+        <a href="#elliptique">Galaxies Elliptiques</a>
+        <a href="#lenticulaires">Galaxies Lenticulaires</a>
+        <a href="#irreguliere">Galaxies Irrégulières</a>
+    </nav>
+</div>
+
+<section id="spirale" class="galaxy-content">
+    <h2>🌌 Galaxies Spirales</h2>
+    <ul>
+        <li><strong>Exemples :</strong> Voie Lactée, Andromède (M31), NGC 1300, M81, M101</li>
+        <li><strong>Caractéristiques :</strong> Bras spiraux riches en étoiles jeunes, gaz et poussière, noyau central dense</li>
+        <li><strong>Faits intéressants :</strong> La Voie Lactée contient plus de 100 milliards d’étoiles et mesure environ 100 000 années-lumière de diamètre. Andromède, notre galaxie voisine, se dirige vers nous et devrait fusionner avec la Voie Lactée dans environ 4 milliards d’années.</li>
+    </ul>
+</section>
+
+<section id="elliptique" class="galaxy-content">
+    <h2>🌌 Galaxies Elliptiques</h2>
+    <ul>
+        <li><strong>Exemples :</strong> M87, M49, NGC 1132, NGC 4881, IC 1101</li>
+        <li><strong>Caractéristiques :</strong> Forme ovale, peu de gaz et de poussière, principalement composées d’étoiles âgées</li>
+        <li><strong>Faits intéressants :</strong> M87 abrite un trou noir supermassif, dont l’image a été capturée en 2019 par l’Event Horizon Telescope. IC 1101 est l’une des plus grandes galaxies connues, mesurant plus de 6 millions d’années-lumière de diamètre.</li>
+    </ul>
+</section>
+
+<section id="lenticulaires" class="galaxy-content">
+    <h2>🌌 Galaxies Lenticulaires</h2>
+    <ul>
+        <li><strong>Exemples :</strong> NGC 5866, NGC 2787, NGC 2782, NGC 5102, NGC 1023</li>
+        <li><strong>Caractéristiques :</strong> Forme intermédiaire entre spirales et elliptiques, faible formation d’étoiles, souvent un disque lumineux</li>
+        <li><strong>Faits intéressants :</strong> Ces galaxies possèdent un disque central mais manquent de bras spiraux distincts. Elles peuvent représenter une étape évolutive entre spirales et elliptiques.</li>
+    </ul>
+</section>
+
+<section id="irreguliere" class="galaxy-content">
+    <h2>🌌 Galaxies Irrégulières</h2>
+    <ul>
+        <li><strong>Exemples :</strong> Grand Nuage de Magellan, Petit Nuage de Magellan, IC 10, NGC 4449, NGC 1569</li>
+        <li><strong>Caractéristiques :</strong> Forme désordonnée, souvent riches en gaz et jeunes étoiles, souvent issues de collisions ou perturbations gravitationnelles</li>
+        <li><strong>Faits intéressants :</strong> Ces galaxies sont souvent des sites de formation intense d’étoiles et résultent fréquemment d’interactions avec d’autres galaxies. Le Grand Nuage de Magellan est un satellite de la Voie Lactée et abrite des centaines de milliers d’étoiles jeunes.</li>
+    </ul>
+</section>
+
+<!-- 🚀 MISSIONS GALACTIQUES -->
+<div class="menu-container">
+    <div class="main-menu">
+        <span>🚀 Missions et Observatoires</span>
+    </div>
+    <nav class="sub-menu">
+        <a href="#hubble">Hubble</a>
+        <a href="#jameswebb">James Webb</a>
+        <a href="#spitzer">Spitzer</a>
+        <a href="#gaia">Gaia</a>
+    </nav>
+</div>
+
+<section id="hubble" class="galaxy-content">
+    <h2>🚀 Télescope Spatial Hubble</h2>
+    <ul>
+        <li><strong>Lancement :</strong> 1990</li>
+        <li><strong>Objectif :</strong> Observation des galaxies, étoiles, nébuleuses et exoplanètes</li>
+        <li><strong>Faits intéressants :</strong> Hubble a fourni les images les plus détaillées de galaxies lointaines, aidant à comprendre l’expansion de l’Univers.</li>
+    </ul>
+</section>
+
+<section id="jameswebb" class="galaxy-content">
+    <h2>🚀 Télescope Spatial James Webb</h2>
+    <ul>
+        <li><strong>Lancement :</strong> 2021</li>
+        <li><strong>Objectif :</strong> Étudier la formation des galaxies et étoiles dans l’Univers primitif</li>
+        <li><strong>Faits intéressants :</strong> Webb peut observer l’infrarouge lointain, permettant de voir des galaxies très anciennes.</li>
+    </ul>
+</section>
+
+<section id="spitzer" class="galaxy-content">
+    <h2>🚀 Télescope Spitzer</h2>
+    <ul>
+        <li><strong>Lancement :</strong> 2003</li>
+        <li><strong>Objectif :</strong> Observation des galaxies, poussières cosmiques et étoiles froides</li>
+        <li><strong>Faits intéressants :</strong> Spitzer a révélé de nouvelles galaxies à formation intense d’étoiles.</li>
+    </ul>
+</section>
+
+<section id="gaia" class="galaxy-content">
+    <h2>🚀 Mission Gaia</h2>
+    <ul>
+        <li><strong>Lancement :</strong> 2013</li>
+        <li><strong>Objectif :</strong> Cartographier la Voie Lactée avec précision en 3D</li>
+        <li><strong>Faits intéressants :</strong> Gaia a mesuré les positions, distances et mouvements de plus d’un milliard d’étoiles.</li>
+    </ul>
+</section>
+
+</main>
+
+<footer>© Sara Ahdid</footer>
+
+</body>
+</html>
+
+</html>
